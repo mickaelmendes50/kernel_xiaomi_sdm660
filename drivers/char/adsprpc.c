@@ -3267,4 +3267,3 @@ late_initcall(fastrpc_device_init);
 module_exit(fastrpc_device_exit);
 
 MODULE_LICENSE("GPL v2");
-

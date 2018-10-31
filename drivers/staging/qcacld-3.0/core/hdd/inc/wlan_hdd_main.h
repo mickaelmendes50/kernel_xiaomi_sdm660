@@ -1444,8 +1444,8 @@ struct hdd_adapter_s {
 
 	struct completion roaming_comp_var;
 
-	/** Completion of change country code */
-	struct completion change_country_code;
+	/** Event of change country code */
+	qdf_event_t change_country_code;
 
 	/* completion variable for Linkup Event */
 	struct completion linkup_event_var;
@@ -2713,7 +2713,7 @@ static inline void hdd_set_tso_flags(hdd_context_t *hdd_ctx,
 	     * We want to enable TSO only if IP/UDP/TCP TX checksum flag is
 	     * enabled.
 	     */
-		hdd_info("TSO Enabled");
+		hdd_debug("TSO Enabled");
 		wlan_dev->features |=
 			 NETIF_F_IP_CSUM | NETIF_F_IPV6_CSUM |
 			 NETIF_F_TSO | NETIF_F_TSO6 | NETIF_F_SG;
